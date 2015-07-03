@@ -1,0 +1,24 @@
+{
+  "name": "immutable-cache",
+  "version": "1.0.0",
+  "description": "Immutable.js enabled caching",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProductiveMobile/immutable-cache.git"
+  },
+  "keywords": [
+    "immutable",
+    "cache",
+    "caching"
+  ],
+  "author": "filipovskii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProductiveMobile/immutable-cache/issues"
+  },
+  "homepage": "https://github.com/ProductiveMobile/immutable-cache#readme"
+}
