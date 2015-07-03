@@ -2,9 +2,6 @@ import {expect} from 'chai';
 import sinon from 'sinon';
 import Cache from '../src/cache';
 
-
-
-
 describe('Cache', () => {
   let sandbox;
 

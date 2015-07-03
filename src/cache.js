@@ -7,8 +7,7 @@ const DEFAULT_PROPS = {
 
 
 const DEFAULT_STATE = Immutable.Map({
-  map: Immutable.Map(),
-  keys: Immutable.List()
+  map: Immutable.OrderedMap()
 });
 
 
@@ -17,14 +16,13 @@ const SHRINK_THRESCHOLD = 0.5;
 
 
 function removeOldKeys(state) {
-  const currentSize = state.get('map').size;
+  const map = state.get('map');
+  const currentSize = map.size;
   const numberOfKeysToRemove = Math.ceil(currentSize * SHRINK_RATIO);
-  const keysToRemove = state.get('keys').slice(0, numberOfKeysToRemove);
+  const entriesToRemove = map.slice(0, numberOfKeysToRemove);
 
-  return keysToRemove.reduce((newState, key, i) => {
-    return newState
-      .update('map', (map) => map.remove(key))
-      .update('keys', (keys) => keys.remove(i));
+  return entriesToRemove.keySeq().reduce((newState, key) => {
+    return newState.update('map', (map) => map.remove(key));
   }, state.asMutable()).asImmutable();
 }
 
@@ -55,7 +53,6 @@ export default class Cache {
       return this;
     }
 
-    newState = newState.update('keys', (keys) => keys.push(key));
     return new Cache(this._props, newState);
   }
 
