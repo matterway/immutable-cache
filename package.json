@@ -2,7 +2,7 @@
   "name": "immutable-cache",
   "version": "1.0.0",
   "description": "Immutable.js enabled caching",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm run lint && npm run test:unit",
     "test:unit": "mocha --compilers js:babel/register",
@@ -21,7 +21,7 @@
     "caching"
   ],
   "author": "filipovskii",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ProductiveMobile/immutable-cache/issues"
   },
