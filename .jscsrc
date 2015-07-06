@@ -1,0 +1,41 @@
+{
+  "preset": "airbnb",
+  "esnext": true,
+  "plugins": [
+    "jscs-jsdoc"
+  ],
+  "disallowMultipleLineBreaks": null,
+  "requirePaddingNewLinesAfterBlocks": null,
+  "requireCamelCaseOrUpperCaseIdentifiers": null,
+  "maximumLineLength": {
+    "value": 80,
+    "allowUrlComments": true
+  },
+  "jsDoc": {
+    "checkAnnotations": {
+      "preset": "closurecompiler",
+      "extra": {
+        "callback": true
+      }
+    },
+    "checkParamNames": true,
+    "requireParamTypes": true,
+    "checkReturnTypes": true,
+    "checkRedundantReturns": true,
+    "requireReturnTypes": true,
+    "checkTypes": "capitalizedNativeCase",
+    "checkRedundantAccess": true,
+    "requireNewlineAfterDescription": true
+  },
+  "fileExtensions": [
+    ".js",
+    ".jsx"
+  ],
+  "excludeFiles": [
+    "node_modules/**",
+    "test/react-phantomjs-shims.js",
+    "addon/lib/build/**",
+    "tasks/data/**",
+    "lib/**"
+  ]
+}
