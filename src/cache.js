@@ -12,7 +12,7 @@ const DEFAULT_STATE = Immutable.Map({
 
 
 const SHRINK_RATIO = 0.25;
-const SHRINK_THRESCHOLD = 0.5;
+const SHRINK_THRESCHOLD = 1;
 
 
 function removeOldKeys(state) {
@@ -78,7 +78,7 @@ export default class Cache {
     const state = this._state;
     let newState = state;
 
-    if (state.size > this._props.maxSize * SHRINK_THRESCHOLD) {
+    if (state.size >= this._props.maxSize * SHRINK_THRESCHOLD) {
       newState = removeOldKeys(state);
     }
 
