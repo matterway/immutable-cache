@@ -64,14 +64,16 @@ describe('Cache', () => {
 
   it('can have limited size', () => {
     let cache = new Cache({
-      maxSize: 1
+      maxSize: 2
     });
 
     cache = cache.set('discard', 'value 1');
     cache = cache.set('keep', 'value 2');
+    cache = cache.set('also', 'value 3');
 
     expect(cache.has('discard')).to.equal(false);
     expect(cache.has('keep')).to.equal(true);
+    expect(cache.has('also')).to.equal(true);
   });
 
 });
